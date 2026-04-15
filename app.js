@@ -1,5 +1,5 @@
 const express = require('express')
-
+const path = require('path')
 const config = require('./utils/config')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
@@ -16,6 +16,7 @@ const rateLimit = require('express-rate-limit')
 const cookieParser = require('cookie-parser')
 
 const app = express()
+
 // app.use(mongoSanitize())
 
 app.use(express.static('dist', {
