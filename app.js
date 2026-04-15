@@ -34,7 +34,8 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-      'img-src': ["'self'", 'data:', 'res.cloudinary.com'],
+      'img-src': ["'self'", 'data:', 'res.cloudinary.com', '*.tile.openstreetmap.org'],
+      'script-src': ["'self'", "'unsafe-inline'"],
     }
   }
 }))
