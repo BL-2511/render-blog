@@ -72,6 +72,9 @@ app.use('/api/blogs', middleware.userExtractor, middleware.requireAuth, blogRout
 // app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
 
+app.get('*', (request, response) => {
+  response.sendFile(path.join(__dirname, 'dist', 'index.html'))
+})
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
