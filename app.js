@@ -30,7 +30,14 @@ app.use(express.static('dist', {
   }
 }))
 app.use(express.json())
-app.use(helmet())
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      'img-src': ["'self'", 'data:', 'res.cloudinary.com'],
+    }
+  }
+}))
 app.use(cookieParser())
 
 // app.use(cors({
