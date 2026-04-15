@@ -4,10 +4,10 @@ const User = require("../models/user")
 
 
 const requestLogger = (request, response, next) => {
-  logger.info('Method:', request.method)
-  logger.info('Path:  ', request.path)
-  logger.info('Body:  ', request.body)
-  logger.info('---')
+  // logger.info('Method:', request.method)
+  // logger.info('Path:  ', request.path)
+  // logger.info('Body:  ', request.body)
+  // logger.info('---')
   next()
 }
 
@@ -52,9 +52,6 @@ const tokenExtractor = (request, response, next) => {
 const userExtractor = async (request, response, next) => {
 
   const token = request.token
-
-  console.log('token:', token)  // is token being extracted?
-  console.log('cookies:', request.cookies)  // is the cookie arriving?
 
   // logger.info('token', token)
 

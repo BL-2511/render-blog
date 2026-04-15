@@ -16,9 +16,9 @@ blogRouter.get('/:id', async (request, response) => {
 
   const blog = await Blog.findById(request.params.id)
   // const blogs = await Blog.find({})
-  console.log(request.params.id)
+  // console.log(request.params.id)
   // console.log(blogs)
-  console.log(blog)
+  // console.log(blog)
 
   // const blogs = await Blog
     // .find({}).populate('user')
@@ -30,7 +30,7 @@ blogRouter.post('/create', async (request, response) => {
   const body = request.body
   const user = request.user
 
-  console.log(request.user)
+  // console.log(request.user)
 
   const blog = new Blog({
     user: user,
@@ -63,7 +63,7 @@ blogRouter.delete('/:id', async (request, response) => {
 
   // const blog = await Blog.findById(request.params.id)
 
-  console.log('id: ', request.params.id)
+  // console.log('id: ', request.params.id)
 
   await Blog.findByIdAndDelete(request.params.id)
 
@@ -72,8 +72,8 @@ blogRouter.delete('/:id', async (request, response) => {
 
 
 blogRouter.put('/:id', async (request, response) => {
-  console.log('request.params.id: ', request.params.id)
-  console.log('request.body: ', request.body)
+  // console.log('request.params.id: ', request.params.id)
+  // console.log('request.body: ', request.body)
 
   const blog = await Blog.findById(request.params.id)
 
@@ -87,7 +87,7 @@ blogRouter.put('/:id', async (request, response) => {
   blog.coverImage = request.body.coverImage
   blog.comments = request.body.comments
 
-  console.log('blog: ', blog)
+  // console.log('blog: ', blog)
 
   const result = await blog.save()
   response.status(201).json(result)
