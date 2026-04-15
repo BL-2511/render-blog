@@ -18,7 +18,16 @@ const cookieParser = require('cookie-parser')
 const app = express()
 // app.use(mongoSanitize())
 
-app.use(express.static('dist'))
+app.use(express.static('dist', {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css')
+    }
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript')
+    }
+  }
+}))
 app.use(express.json())
 app.use(helmet())
 app.use(cookieParser())
