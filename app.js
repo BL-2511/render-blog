@@ -41,7 +41,7 @@ app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
 // app.use(middleware.userExtractor)
 
-logger.info('connecting to', config.MONGODB_URI)
+// logger.info('connecting to', config.MONGODB_URI)
 mongoose
   .connect(config.MONGODB_URI, { family: 4 })
   .then(() => {
