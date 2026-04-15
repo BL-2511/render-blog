@@ -11,7 +11,7 @@ const loginRouter = require('./controllers/login')
 const mongoose = require('mongoose')
 const helmet = require('helmet')
 const rateLimit = require('express-rate-limit')
-const cors = require('cors')
+// const cors = require('cors')
 // const mongoSanitize = require('express-mongo-sanitize')
 const cookieParser = require('cookie-parser')
 
@@ -23,10 +23,10 @@ app.use(express.json())
 app.use(helmet())
 app.use(cookieParser())
 
-app.use(cors({
-  origin: process.env.FRONTEND_URL, // e.g. 'https://yourdomain.onrender.com'
-  credentials: true,
-}))
+// app.use(cors({
+//   origin: process.env.FRONTEND_URL, // e.g. 'https://yourdomain.onrender.com'
+//   credentials: true,
+// }))
 
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
