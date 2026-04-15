@@ -72,7 +72,7 @@ app.use('/api/blogs', middleware.userExtractor, middleware.requireAuth, blogRout
 // app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
 
-app.get('*', (request, response) => {
+app.get('/{*path}', (request, response) => {
   response.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
