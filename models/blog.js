@@ -38,6 +38,7 @@ const BlogSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
+  access: { type: String, required: true },
   categories: [{ type: String }],
   title: { type: String, required: true },
   date: { type: Date },

@@ -35,6 +35,7 @@ blogRouter.post('/create', async (request, response) => {
   const blog = new Blog({
     user: user,
     title: body.title,
+    access: body.access,
     categories: body.categories,
     date: body.date,
     location: body.location,
@@ -79,6 +80,7 @@ blogRouter.put('/:id', async (request, response) => {
 
   blog.title = request.body.title
   blog.categories = request.body.categories
+  blog.access = request.body.access
   blog.date = request.body.date
   blog.location = request.body.location
   blog.body = request.body.body
