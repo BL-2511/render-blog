@@ -37,8 +37,9 @@ app.use(helmet({
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
       'img-src': ["'self'", 'data:', 'res.cloudinary.com', 'tile.openstreetmap.org', '*.tile.openstreetmap.org'],
       'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-      'connect-src': ["'self'", 'data:'],
+      'connect-src': ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com'],
       'worker-src': ["'self'", 'blob:'],
+      'frame-src': ["'self'", 'blob:'],
     }
   }
 }))
